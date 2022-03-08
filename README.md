@@ -37,7 +37,7 @@ The results are printed in the command line (terminal). They are displayed in th
 
 The main findings are the total number of votes were cast in this congressional election,the number of votes and the percentage of total votes for each county in the precinct, county which had the largest number of votes, the number of votes and the percentage of the total votes each candidate received, winning candidate and the number of votes and the percentage of votes that condidate recieved. Let's take a closer look to these five results.
 
-#### 1.The total number of votes were cast in this congressional election
+#### 1. The total number of votes were cast in this congressional election
 
 In order to find total number of votes the integer variable total_vote was defined and initialized as 
 
@@ -64,4 +64,39 @@ When the loop has ended the total vote was printed in the command line (terminal
 The total votes is
 
 > 369,711
+
+#### 2. The number of votes and the percentage of total votes for each county
+
+In each interation of the main for loop we check if the county name does not exist in the the list of counties (county_options), if it does not exist we add it to the list and initialize its votes in the county_votes dictionary; otherwise (if the county exists in the list of counties) the value (the number of votes) of current county is increased by 1. These are done by the following part of script:
+             
+        if county_name not in county_options:
+
+           county_options.append(county_name)
+
+           county_votes[county_name] = 0
+
+        county_votes[county_name] += 1
+
+Note that the last statement is out of if loop. When the main for loop ended the list of county_options (which contains county names) and the dictionary of county_votes (which contais county names as key and the number of votes of corresponding county as value) are created.
+
+In the following part of the script, percentage votes of each county is calculated, by the help of f-formatting the county_results is created, it is prented in command line and it is saved in txt document.
+    
+    for county_name in county_votes:  
+        votes = county_votes.get(county_name) 
+        vote_percentage = float(votes) / float(total_votes) * 100
+        county_results = (
+            f"{county_name}: {vote_percentage:.1f}% ({votes:,})\n")
+
+        print(county_results)
+       
+        txt_file.write(county_results)
+
+The output can be summarized in the following table:
+
+| Name of the county.   | The number of votes  | The percentage of votes|
+|:-----:                | :-----:              |:-----:                 |
+| Jefferson             |3 8,855               | 10.5%                  | 
+| Denver                | 306,055              | 81.8%                  |
+| Arapahoe              | 24,801               | 6.7%                   |
+
 ## Election Audit Summary
