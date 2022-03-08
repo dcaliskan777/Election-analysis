@@ -4,7 +4,6 @@
 # Add our dependencies.
 import csv
 import os
-path = "...hj"
 # Add a variable to load a file from a path.
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 file_to_load = os.path.join(THIS_FOLDER, "Resources", 'election_results.csv')
