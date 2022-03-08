@@ -35,9 +35,32 @@ The results are printed in the command line (terminal). They are displayed in th
 
 ![](https://github.com/dcaliskan777/Election-analysis/blob/main/election_results_in_terminal.png)
 
+The main findings are the total number of votes were cast in this congressional election,the number of votes and the percentage of total votes for each county in the precinct, county which had the largest number of votes, the number of votes and the percentage of the total votes each candidate received, winning candidate and the number of votes and the percentage of votes that condidate recieved. Let's take a closer look to these five results.
 
-### Challenges 
+#### 1.The total number of votes were cast in this congressional election
 
+In order to find total number of votes the integer variable total_vote was defined and initialized as 
+
+> total_votes = 0
+
+out of the main for loop. At the beginning of inside of the for loop it is inreased by 1 in order to count every vote as
+
+>  total_votes = total_votes + 1
+
+When the loop has ended the total vote was printed in the command line (terminal )and save in the txt file as
+
+with open(file_to_save, "w") as txt_file:
+
+    # Print the final vote count (to terminal)
+    election_results = (
+        f"\nElection Results:\n\n"
+        f"-------------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"-------------------------\n\n"
+        f"County Votes:\n\n")
+    print(election_results, end="")
+
+    txt_file.write(election_results)
 
 
 ## Election Audit Summary
