@@ -49,9 +49,8 @@ out of the main for loop. At the beginning of inside of the for loop it is inrea
 
 When the loop has ended the total vote was printed in the command line (terminal )and save in the txt file as
 
-with open(file_to_save, "w") as txt_file:
 
-    # Print the final vote count (to terminal)
+    with open(file_to_save,"w") as txt_file:    
     election_results = (
         f"\nElection Results:\n\n"
         f"-------------------------\n"
