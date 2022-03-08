@@ -13,14 +13,28 @@ In the report the purpose of the project is written; the main points of script a
 ## Analysis of Script through Election Audit Results And Challenges
 
 ### Analysis of Script through Audit Results
-The script contain a main for loop which goes through all rows in the csv document. Before starting the loop, the librories csv and os are imprted to use their functions by
+The script contains a main for loop which goes through all rows in the csv document. Before starting the loop, the libraries csv and os are imprted to use their functions by
+
 >import csv
+>
 >import os
+
 The cvs document loaded to read by 
+
 >THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+
 >file_to_load = os.path.join(THIS_FOLDER, "Resources", 'election_results.csv')
+
 A txt document is created to save the results by
+
 >file_to_save = os.path.join(THIS_FOLDER,"analysis","election_results.txt")
+
+Some variables as integers,foats, lists and dictionaries are defined and initialized.
+
+The results are printed in the command line (terminal). They are displayed in the following screen shot:
+
+![](.\election_results_in_terminal.png)
+
 
 ### Challenges 
 
