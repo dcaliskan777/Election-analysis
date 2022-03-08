@@ -92,12 +92,43 @@ In the following part of the script, percentage votes of each county is calculat
 
 The output can be summarized in the following table:
 
-| Name of the county.   | The number of votes  | The percentage of votes|
+| Name of the county    | The number of votes  | The percentage of votes|
 |:-----:                | :-----:              |:-----:                 |
 | Jefferson             | 38,855               | 10.5%                  | 
 | Denver                | 306,055              | 81.8%                  |
 | Arapahoe              | 24,801               | 6.7%                   |
-|:-----:                | :-----:              | :-----:                |
 | **The Total**         | 369,711              | 100%                   |
 
+#### 3. County which had the largest number of votes
+
+In order to determine the county which had the highest number of votes we a variable before starting the main for loop, named largest_count and we assigned 0 for it initially. And then in the for loop of counties we compare it with the votes, if votes is larger than largest_count then votes is assigned to largest_count. This comparison provids to determine also corresponding county name and percentage of votes. This is being done by the following part of the script:
+txt_file.write(county_results)
+
+        
+        if votes > largest_count:
+            largest_count = votes
+            largest_county = county_name
+            largest_percentage = vote_percentag
+            
+ The following codes are for printing and saving, the result of the county which had the highest number of votes.
+ 
+    largest_county_results=(
+        f"        \n"
+        f"----------------------\n"
+        f"The county with the highest turnout : {largest_county} \n"
+        f"The number of votes in that county  : {largest_count:,} \n"
+        f"Percentage of the votes             : {largest_percentage:.1f}% \n"
+        f"----------------------\n\n"
+        f"Candidate results:\n\n")
+    print(largest_county_results)
+ 
+    txt_file.write(largest_county_results)
+ 
+ The output can be summarized in the following table:
+ | Name of the county with the highest turnout    | The number of votes  | The percentage of votes|
+|:-----:                                          | :-----:              |:-----:                 |
+| Denver                                          | 306,055              | 82.8%                  | 
+
+#### 4. The number of votes and the percentage of the total votes each candidate received
+#### 5. Winning candidate and the number of votes and the percentage of votes that condidate recieved
 ## Election Audit Summary
