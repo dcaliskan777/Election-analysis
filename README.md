@@ -130,5 +130,47 @@ txt_file.write(county_results)
 | Denver                                          | 306,055              | 82.8%                  | 
 
 #### 4. The number of votes and the percentage of the total votes each candidate received
+
+In each iteration of the main for loop we check if the candidate name does not exist in the the list of candidates (candidate_options), if it does not exist we add it to the list and initialize its votes in the candidate_votes dictionary; otherwise (if the candidate exists in the list of candidate) the value (the number of votes) of current candidate is increased by 1. These are done by the following part of script:
+
+
+       
+        if candidate_name not in candidate_options:
+
+            candidate_options.append(candidate_name)
+
+            candidate_votes[candidate_name] = 0
+
+        candidate_votes[candidate_name] += 1
+        
+Note that the last statement is out of if loop. When the main for loop ended the list of coandidate_options (which contains candidate names) and the dictionary of candidate_votes (which contais candidate names as key and the number of votes of corresponding candidate as value) are created.
+
+In the following part of the script, percentage votes of each candidate is calculated, by the help of f-formatting the candidate_results is created, it is printed in command line (terminal) and it is saved in text document.
+
+# 8: Save the county with the largest turnout to a text file.
+   
+    for candidate_name in candidate_votes:
+
+        votes = candidate_votes.get(candidate_name)
+        vote_percentage = float(votes) / float(total_votes) * 100
+        candidate_results = (
+            f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+
+        print(candidate_results)
+   
+        txt_file.write(candidate_results)
+        
+The output can be summarized in the following table:
+
+| Name of the candidate     | The number of votes  | The percentage of votes|
+|:-----:                    | :-----:              |:-----:                 |
+| Charles Casper Stockham   | 85,213               | 23.0%                  | 
+| Diana DeGette             | 272,892              | 73.8%                  |
+|Raymon Anthony Doane       | 11,606               | 3.1%                   |
+| **The Total**             | 369,711              | 99.9%                  |
+
+The percentage of total votes is unexpectedly 99.9%. It is due to the ignored part of percentages when thwy are rounding.
+It means the some of ihnored parts of percentages is 0.01%.
+        
 #### 5. Winning candidate and the number of votes and the percentage of votes that condidate recieved
 ## Election Audit Summary
