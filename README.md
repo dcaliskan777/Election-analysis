@@ -33,7 +33,7 @@ Some variables as integers,foats, lists and dictionaries are defined and initial
 
 The results are printed in the command line (terminal). They are displayed in the following screen shot:
 
-![](.\election_results_in_terminal.png)
+![](https://github.com/dcaliskan777/Election-analysis/blob/main/election_results_in_terminal.png)
 
 
 ### Challenges 
