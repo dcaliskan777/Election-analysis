@@ -102,9 +102,7 @@ The output can be summarized in the following table:
 #### 3. County which had the largest number of votes
 
 In order to determine the county which had the highest number of votes we a variable before starting the main for loop, named largest_count and we assigned 0 for it initially. And then in the for loop of counties we compare it with the votes, if votes is larger than largest_count then votes is assigned to largest_count. This comparison provids to determine also corresponding county name and percentage of votes. This is being done by the following part of the script:
-txt_file.write(county_results)
 
-        
         if votes > largest_count:
             largest_count = votes
             largest_county = county_name
@@ -133,8 +131,6 @@ txt_file.write(county_results)
 
 In each iteration of the main for loop we check if the candidate name does not exist in the the list of candidates (candidate_options), if it does not exist we add it to the list and initialize its votes in the candidate_votes dictionary; otherwise (if the candidate exists in the list of candidate) the value (the number of votes) of current candidate is increased by 1. These are done by the following part of script:
 
-
-       
         if candidate_name not in candidate_options:
 
             candidate_options.append(candidate_name)
@@ -147,8 +143,6 @@ Note that the last statement is out of if loop. When the main for loop ended the
 
 In the following part of the script, percentage votes of each candidate is calculated, by the help of f-formatting the candidate_results is created, it is printed in command line (terminal) and it is saved in text document.
 
-# 8: Save the county with the largest turnout to a text file.
-   
     for candidate_name in candidate_votes:
 
         votes = candidate_votes.get(candidate_name)
@@ -171,6 +165,9 @@ The output can be summarized in the following table:
 
 The percentage of total votes is unexpectedly 99.9%. It is due to the ignored part of percentages when thwy are rounding.
 It means the some of ihnored parts of percentages is 0.01%.
-        
+
 #### 5. Winning candidate and the number of votes and the percentage of votes that condidate recieved
+
+### Challanges
+
 ## Election Audit Summary
