@@ -1,9 +1,9 @@
 # Election Analysis
-In this project, an election results which is given in a csv document are being analized by using Python.
+In this project, an election results which is given in a csv document are being analyzed by using Python.
 ## Overview of Election Audit
-The analysis was made to find out total number of votes, the number of votes and their percentages in each county, the counthy with the highest turnout, the vote for each candidate and its persentage and finally the winning conditate with number of votes and its percentage are found out from the document![election_resulsts.csv](.\election_results.csv). To accomplish to this work,several for loops and conditional statemnets were used in python.
+The analysis was made to find out total number of votes, the number of votes and their percentages in each county, the county with the highest turnout, the number of votes for each candidate and its persentage and finally the winning candidate with number of votes and its percentage are found out from the document![election_resulsts.csv](.\election_results.csv). To accomplish to this work,several for loops and conditional statemnets were used in python.
 
-The results were prented in commend line (terminal, displayed in this work as png documnet), and they are saved in a text file which is named ![election_results.txt](.\election_results.txt).
+The results were printed in commend line (terminal, displayed in this work as png documnet), and they are saved in a text file which is named ![election_results.txt](.\election_results.txt).
 
 In the report the purpose of the project is written; the main points of script are explained; the result is displayed by a figure.The result is broken down in to parts and each part is shown by a table. Finally, a summary statement is icluded, providing a business proposal to the election commission on how this script can be used, with some modifications,for any election.
 
@@ -13,7 +13,7 @@ In the report the purpose of the project is written; the main points of script a
 ## Analysis of Script through Election Audit Results And Challenges
 
 ### Analysis of Script through Audit Results
-The script contains a main for loop which goes through all rows in the csv document. Before starting the loop, the libraries csv and os are imprted to use their functions by
+The script contains a main for loop which goes through all rows in the csv document. Before starting the loop, the libraries csv and os are imported to use their functions by
 
 >import csv
 >
@@ -47,8 +47,7 @@ out of the main for loop. At the beginning of inside of the for loop it is inrea
 
 >  total_votes = total_votes + 1
 
-When the loop has ended the total vote was printed in the command line (terminal )and save in the txt file as
-
+When the loop has ended the total vote was printed in the command line (terminal )and save in the text file as
 
     with open(file_to_save,"w") as txt_file:    
     election_results = (
@@ -61,7 +60,7 @@ When the loop has ended the total vote was printed in the command line (terminal
 
     txt_file.write(election_results)
 
-The total votes is
+The total number of votes is
 
 > 369,711
 
@@ -79,7 +78,7 @@ In each iteration of the main for loop we check if the county name does not exis
 
 Note that the last statement is out of if loop. When the main for loop ended the list of county_options (which contains county names) and the dictionary of county_votes (which contais county names as key and the number of votes of corresponding county as value) are created.
 
-In the following part of the script, percentage votes of each county is calculated, by the help of f-formatting the county_results is created, it is printed in command line (terminal) and it is saved in txt document.
+In the following part of the script, percentage votes of each county is calculated, by the help of f-formatting the county_results is created, it is printed in command line (terminal) and it is saved in text document.
     
     for county_name in county_votes:  
         votes = county_votes.get(county_name) 
