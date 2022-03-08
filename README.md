@@ -61,5 +61,7 @@ When the loop has ended the total vote was printed in the command line (terminal
 
     txt_file.write(election_results)
 
+The total votes is
 
+> 369,711
 ## Election Audit Summary
