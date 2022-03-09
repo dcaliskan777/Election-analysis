@@ -27,12 +27,10 @@ county_votes = {}
 # Track the winning candidate, vote count and percentage
 winning_candidate = ""
 winning_count = 0
-winning_percentage = 0
 
 # 2: Track the largest county, largest county voter turnout and largest county percentage.
 largest_county = ""
 largest_count = 0
-largest_percentage = 0
 
 # Read the csv and convert it into a list of dictionaries
 with open(file_to_load) as election_data:
