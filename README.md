@@ -5,7 +5,7 @@ The analysis was made to find out total number of votes, the number of votes and
 
 The results were printed in commend line (terminal, displayed in this work as png documnet), and they are saved in a text file which is named ![election_results.txt](.\election_results.txt).
 
-In the report the purpose of the project is written; the main points of script are explained; the result is displayed by a figure.The result is broken down in to parts and each part is shown by a table. Finally, a summary statement is icluded, providing a business proposal to the election commission on how this script can be used, with some modifications,for any election.
+In the report the purpose of the project is written; the main points of script are explained; the result is displayed by a figure.The result is broken down in to parts and each part is shown by a table. Finally, a summary statement is included, providing a business proposal to the election commission on how this script can be used, with some modifications,for any election.
 
 ### Purpose
  The purpuse of the work is to create a python script to make analysis of an election, which is applicable to any election results, independent of number of votes, number of counties and number of candidates. 
@@ -101,12 +101,12 @@ The output can be summarized in the following table:
 
 #### 3. County which had the largest number of votes
 
-In order to determine the county which had the highest number of votes we a variable before starting the main for loop, named largest_count and we assigned 0 for it initially. And then in the for loop of counties we compare it with the votes, if votes is larger than largest_count then votes is assigned to largest_count. This comparison provids to determine also corresponding county name and percentage of votes. This is being done by the following part of the script:
+In order to determine the county which had the highest number of votes we define a variable before starting the main for loop, named largest_count and we assigned 0 for it initially. And then in the for loop of counties we compare it with the votes, if votes is larger than largest_count then votes is assigned to largest_count. This comparison provides to determine also corresponding county name and percentage of votes. This is being done by the following part of the script:
 
         if votes > largest_count:
             largest_count = votes
             largest_county = county_name
-            largest_percentage = vote_percentag
+            largest_percentage = vote_percentage
             
  The following codes are for printing and saving, the result of the county which had the highest number of votes.
  
@@ -123,6 +123,7 @@ In order to determine the county which had the highest number of votes we a vari
     txt_file.write(largest_county_results)
  
  The output can be summarized in the following table:
+ 
  | Name of the county with the highest turnout    | The number of votes  | The percentage of votes|
 |:-----:                                          | :-----:              |:-----:                 |
 | Denver                                          | 306,055              | 82.8%                  | 
@@ -164,9 +165,35 @@ The output can be summarized in the following table:
 | **The Total**             | 369,711              | 99.9%                  |
 
 The percentage of total votes is unexpectedly 99.9%. It is due to the ignored part of percentages when thwy are rounding.
-It means the some of ihnored parts of percentages is 0.01%.
+It means the some of ignored parts of percentages is 0.01%.
 
 #### 5. Winning candidate and the number of votes and the percentage of votes that condidate recieved
+
+In order to determine the winning candidate who had the highest number of votes we define a variable before starting the main for loop, named winning_count and we assigned 0 for it initially. And then in the for loop of candidates we compare it with the votes, if votes is larger than winning_count then votes is assigned to winnning_count. This comparison provides to determine also corresponding candidate name and percentage of votes. This is being done by the following part of the script:
+     
+        if (votes > winning_count) :
+            winning_count = votes
+            winning_candidate = candidate_name
+            winning_percentage = vote_percentage
+
+The following codes are for printing and saving, the result of the candidate who had the highest number of votes (winning candidate).
+
+    winning_candidate_summary = (
+        f"         \n"
+        f"-------------------------\n"
+        f"Winner            : {winning_candidate}\n"
+        f"Winning Vote Count: {winning_count:,}\n"
+        f"Winning Percentage: {winning_percentage:.1f}%\n"
+        f"-------------------------\n")
+    print(winning_candidate_summary)
+
+    txt_file.write(winning_candidate_summary)
+    
+The output can be summarized in the following table:
+    
+ | The Winning Condidate     | The number of votes  | The percentage of votes|
+|:-----:                     | :-----:              | :-----:                |
+| Diana DeGette              | 272,892              | 73.8%                  | 
 
 ### Challanges
 
