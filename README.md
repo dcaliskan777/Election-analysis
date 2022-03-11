@@ -194,4 +194,8 @@ The output can be summarized in the following table:
 
 ## Election Audit Summary
 
-Altough,the python script which is written in this project for a specific election results; it is applicable to any election results, independent of number of votes, number of counties and number of candidates. By making some easy modification we can also find out the number of votes of each candidate in each countiies and also percentages of their votes. In addition to this can add some codes to visualize the results by bar graphs and pie charts.
+Altough,the python script which is written in this project for a specific election results; it is applicable to any election results, independent of number of votes, number of counties and number of candidates. 
+
+By making some easy modification we can also find out the number of votes of each candidate in each countiies and also percentages of their votes. 
+
+In addition to this, we can add some codes to visualize the results by bar graphs and pie charts.
