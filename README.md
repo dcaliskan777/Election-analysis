@@ -1,18 +1,17 @@
 # Election Analysis
 In this project, an election results which is given in a csv document are being analyzed by using Python.
 ## Overview of Election Audit
-The analysis was made to find out total number of votes, the number of votes and their percentages in each county, the county with the highest turnout, the number of votes for each candidate and its persentage and finally the winning candidate with number of votes and its percentage are found out from the document![election_resulsts.csv](.\election_results.csv). To accomplish to this work,several for loops and conditional statemnets were used in python.
+The analysis was made to find out total number of votes, the number of votes and their percentages in each county, the county with the highest turnout, the number of votes for each candidate and its persentage and finally the winning candidate with number of votes and its percentage are found out from the document![election_resulsts.csv](.\election_results.csv). To accomplish to this work,several for loops and conditional statements were used in python.
 
-The results were printed in commend line (terminal, displayed in this work as png documnet), and they are saved in a text file which is named ![election_results.txt](.\election_results.txt).
+The results were printed in commend line (terminal, displayed in this work as png documnet), and they were saved in a text file which is named ![election_results.txt](.\election_results.txt).
 
 In the report the purpose of the project is written; the main points of script are explained; the result is displayed by a figure.The result is broken down in to parts and each part is shown by a table. Finally, a summary statement is included, providing a business proposal to the election commission on how this script can be used, with some modifications,for any election.
 
 ### Purpose
  The purpuse of the work is to create a python script to make analysis of an election, which is applicable to any election results, independent of number of votes, number of counties and number of candidates. 
 
-## Analysis of Script through Election Audit Results And Challenges
+## Analysis of Script through Election Audit Results 
 
-### Analysis of Script through Audit Results
 The script contains a main for loop which goes through all rows in the csv document. Before starting the loop, the libraries csv and os are imported to use their functions by
 
 >import csv
@@ -37,17 +36,17 @@ The results are printed in the command line (terminal). They are displayed in th
 
 The main findings are the total number of votes were cast in this congressional election,the number of votes and the percentage of total votes for each county in the precinct, county which had the largest number of votes, the number of votes and the percentage of the total votes each candidate received, winning candidate and the number of votes and the percentage of votes that condidate recieved. Let's take a closer look to these five results.
 
-#### 1. The total number of votes were cast in this congressional election
+### 1. The total number of votes were cast in this congressional election
 
-In order to find total number of votes the integer variable total_vote was defined and initialized as 
+In order to find total number of votes the integer variable total_vote was defined and initialized by using the code 
 
 > total_votes = 0
 
-out of the main for loop. At the beginning of inside of the for loop it is inreased by 1 in order to count every vote as
+out of the main for loop. At the beginning of inside of the for loop it is inreased by 1 in order to count every vote by using the code
 
 >  total_votes = total_votes + 1
 
-When the loop has ended the total vote was printed in the command line (terminal )and save in the text file as
+When the loop has ended the total vote was printed in the command line (terminal )and save in the text file by using the code
 
     with open(file_to_save,"w") as txt_file:    
     election_results = (
@@ -64,7 +63,7 @@ The total number of votes is
 
 > 369,711
 
-#### 2. The number of votes and the percentage of total votes for each county
+### 2. The number of votes and the percentage of total votes for each county
 
 In each iteration of the main for loop we check if the county name does not exist in the the list of counties (county_options), if it does not exist we add it to the list and initialize its votes in the county_votes dictionary; otherwise (if the county exists in the list of counties) the value (the number of votes) of current county is increased by 1. These are done by the following part of script:
              
@@ -76,7 +75,7 @@ In each iteration of the main for loop we check if the county name does not exis
 
         county_votes[county_name] += 1
 
-Note that the last statement is out of if loop. When the main for loop ended the list of county_options (which contains county names) and the dictionary of county_votes (which contais county names as key and the number of votes of corresponding county as value) are created.
+Note that the last statement is out of if loop. When the main for loop ended the list of county_options (which contains county names) and the dictionary of county_votes (which contains county names as key and the number of votes of corresponding county as value) are created.
 
 In the following part of the script, percentage votes of each county is calculated, by the help of f-formatting the county_results is created, it is printed in command line (terminal) and it is saved in text document.
     
@@ -99,7 +98,7 @@ The output can be summarized in the following table:
 | Arapahoe              | 24,801               | 6.7%                   |
 | **The Total**         | 369,711              | 100%                   |
 
-#### 3. County which had the largest number of votes
+### 3. County which had the largest number of votes
 
 In order to determine the county which had the highest number of votes we define a variable before starting the main for loop, named largest_count and we assigned 0 for it initially. And then in the for loop of counties we compare it with the votes, if votes is larger than largest_count then votes is assigned to largest_count. This comparison provides to determine also corresponding county name and percentage of votes. This is being done by the following part of the script:
 
@@ -128,24 +127,21 @@ In order to determine the county which had the highest number of votes we define
 |:-----:                                          | :-----:              |:-----:                 |
 | Denver                                          | 306,055              | 82.8%                  | 
 
-#### 4. The number of votes and the percentage of the total votes each candidate received
+### 4. The number of votes and the percentage of the total votes each candidate received
 
 In each iteration of the main for loop we check if the candidate name does not exist in the the list of candidates (candidate_options), if it does not exist we add it to the list and initialize its votes in the candidate_votes dictionary; otherwise (if the candidate exists in the list of candidate) the value (the number of votes) of current candidate is increased by 1. These are done by the following part of script:
 
         if candidate_name not in candidate_options:
-
             candidate_options.append(candidate_name)
-
             candidate_votes[candidate_name] = 0
 
         candidate_votes[candidate_name] += 1
         
-Note that the last statement is out of if loop. When the main for loop ended the list of coandidate_options (which contains candidate names) and the dictionary of candidate_votes (which contais candidate names as key and the number of votes of corresponding candidate as value) are created.
+Note that the last statement is out of if loop. When the main for loop ended the list of coandidate_options (which contains candidate names) and the dictionary of candidate_votes (which contains candidate names as key and the number of votes of corresponding candidate as value) are created.
 
 In the following part of the script, percentage votes of each candidate is calculated, by the help of f-formatting the candidate_results is created, it is printed in command line (terminal) and it is saved in text document.
 
     for candidate_name in candidate_votes:
-
         votes = candidate_votes.get(candidate_name)
         vote_percentage = float(votes) / float(total_votes) * 100
         candidate_results = (
@@ -165,9 +161,9 @@ The output can be summarized in the following table:
 | **The Total**             | 369,711              | 99.9%                  |
 
 The percentage of total votes is unexpectedly 99.9%. It is due to the ignored part of percentages when thwy are rounding.
-It means the some of ignored parts of percentages is 0.01%.
+It means the sum of ignored parts of percentages is 0.01%.
 
-#### 5. Winning candidate and the number of votes and the percentage of votes that condidate recieved
+### 5. Winning candidate and the number of votes and the percentage of votes that condidate recieved
 
 In order to determine the winning candidate who had the highest number of votes we define a variable before starting the main for loop, named winning_count and we assigned 0 for it initially. And then in the for loop of candidates we compare it with the votes, if votes is larger than winning_count then votes is assigned to winnning_count. This comparison provides to determine also corresponding candidate name and percentage of votes. This is being done by the following part of the script:
      
@@ -195,6 +191,7 @@ The output can be summarized in the following table:
 |:-----:                     | :-----:              | :-----:                |
 | Diana DeGette              | 272,892              | 73.8%                  | 
 
-### Challanges
 
 ## Election Audit Summary
+
+Altough,the python script which is written in this project for a specific election results; it is applicable to any election results, independent of number of votes, number of counties and number of candidates. By making some easy modification we can also find out the number of votes of each candidate in each countiies and also percentages of their votes. In addition to this can add some codes to visualize the results by bar graphs and pie charts.
